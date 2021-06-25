@@ -16,12 +16,12 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
-  app.get('aboutUs', aboutUsController.getaboutUsController);
-  app.get('about-formula-sae', aboutFormulaSaeController.getAboutFormulaSae);
-  app.get('banner', bannerController.getbannerController);
-  app.get('social-networks', socialFooterController.getSocialNetworks);
-  app.get('about-car', aboutCarController.getAboutCar);
-  app.get('backers', backersController.getBackers);
+  app.get('/api/aboutUs', aboutUsController.getaboutUsController);
+  app.get('/api/about-formula-sae', aboutFormulaSaeController.getAboutFormulaSae);
+  app.get('/api/banner', bannerController.getbannerController);
+  app.get('/api/social-networks', socialFooterController.getSocialNetworks);
+  app.get('/api/about-car', aboutCarController.getAboutCar);
+  app.get('/api/backers', backersController.getBackers);
 
   app.get('*', (req, res) => {
 		res.redirect('/');
