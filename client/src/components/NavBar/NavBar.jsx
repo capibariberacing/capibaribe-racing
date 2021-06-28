@@ -14,7 +14,6 @@ function NavBar() {
   const loadConteudos = async () => {
     const res = await apiAxios.get("aboutUs");
     setConteudos(res.data);
-    console.log(res.data);
   };
 
   useEffect(() => {
@@ -48,7 +47,7 @@ function NavBar() {
           {menu ? null :
           (<nav className={styles.MenuResponsive}>
 
-            <ul className={styles.MenuResponsiveList}>
+            <ul className={styles.MenuResponsiveList} onClick={() => document.getElementById("check").checked = false}>
               <li><a onClick={() => setMenu(!menu)} href="#banner">Sobre nós</a></li>
               <li><a onClick={() => setMenu(!menu)} href="#infoCarAndSae">Nosso Carro</a></li>
               <li><a onClick={() => setMenu(!menu)} href="#infoCarAndSae">Fórmula SAE</a></li>
